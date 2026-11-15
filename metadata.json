@@ -1,0 +1,6 @@
+{
+  "name": "PRIME ESPORT",
+  "description": "Ultimate native Android gaming and esports social platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

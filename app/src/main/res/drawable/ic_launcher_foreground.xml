@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Top Crown -->
+    <path
+        android:pathData="M38,34 L43,44 L54,30 L65,44 L70,34 L68,48 L40,48 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="38"
+                android:startY="30"
+                android:endX="70"
+                android:endY="48"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#F8FAFC" />
+                <item android:offset="0.5" android:color="#60A5FA" />
+                <item android:offset="1.0" android:color="#3B82F6" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Crown gems -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M54,28 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+    <path
+        android:fillColor="#3B82F6"
+        android:pathData="M38,32 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0" />
+    <path
+        android:fillColor="#3B82F6"
+        android:pathData="M70,32 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0" />
+
+    <!-- Stylized "P" Esports Monogram (Left Wing / Stem: Blue) -->
+    <path
+        android:pathData="M40,51 L52,51 C57,51 61,54 61,59 C61,64 57,67 52,67 L47,67 L47,79 L40,79 Z M47,56 L47,62 L52,62 C53.5,62 55,61 55,59 C55,57 53.5,56 52,56 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="40"
+                android:startY="51"
+                android:endX="61"
+                android:endY="79"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFFFFF" />
+                <item android:offset="0.4" android:color="#60A5FA" />
+                <item android:offset="1.0" android:color="#2563EB" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Stylized "P" Esports Slash & Shadow (Right Accent: Red) -->
+    <path
+        android:pathData="M54,53 L66,65 L60,77 L56,71 L60,65 L54,59 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="53"
+                android:endX="66"
+                android:endY="77"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#F87171" />
+                <item android:offset="1.0" android:color="#DC2626" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Bottom Shield Chevrons -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M44,82 L54,86 L64,82 L54,88 Z" />
+</vector>

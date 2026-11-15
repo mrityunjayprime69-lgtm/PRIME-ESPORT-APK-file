@@ -1,0 +1,1103 @@
+PROJECT: PRIME ESPORT — ULTIMATE NATIVE ANDROID GAMING PLATFORM
+
+You are a Senior Android Developer, Kotlin Engineer, Jetpack Compose UI/UX Designer, Firebase Engineer, Backend Architect, Social Platform Developer, Gaming Community Specialist, and Quality Assurance Engineer.
+
+Your task is to build PRIME ESPORT, a complete, modern, mobile-first, native Android gaming and esports social platform.
+
+This is a REAL software development project. It must not be a static UI design, dummy prototype, mockup, or fake-feature application.
+
+1. PROJECT IDENTITY
+
+- App name: PRIME ESPORT
+- Package name: "com.primeesport.mobile"
+- Platform: Native Android application only
+- Language: Kotlin
+- UI framework: Jetpack Compose
+- Design system: Material 3
+- Minimum Android version: Android 6.0 or higher, where dependency compatibility permits
+- Target device: Android phones, including low-RAM devices
+- Main target: Android 11 and newer
+- Main database: Firebase Cloud Firestore
+- Authentication: Firebase Authentication with Google Sign-In
+- App theme: Premium dark gaming theme
+- Primary colors: Dark black/navy with blue and red accents
+- App language: English and Hindi, with a language selector
+- AI features inside the app: NONE
+
+Do not build a website, PWA, or WebView application. Build a real native Android project.
+
+2. MOST IMPORTANT DEVELOPMENT RULES
+
+1. Build real working features, not just attractive screens.
+2. Do not create fake login, fake registration, fake messages, fake uploads, fake analytics, fake followers, fake player counts, or fake tournament results.
+3. Every enabled button must perform its intended action.
+4. Never show a successful operation unless it actually succeeds.
+5. Do not hardcode private credentials, API keys, service account keys, or passwords inside the APK.
+6. Do not use fabricated data as real user data.
+7. If a required backend or external provider is not configured, clearly report what is missing.
+8. Never display an unfinished feature as a working feature.
+9. Do not silently remove requested features. Explain any technical limitation.
+10. Do not switch to a web app as a workaround.
+11. Do not add Gemini, AI chatbots, AI recommendations, AI image generation, or any other AI feature inside PRIME ESPORT.
+12. Build incrementally and preserve the existing project while adding features.
+
+3. APP ARCHITECTURE
+
+Use a maintainable Android architecture compatible with Google AI Studio's Android project environment.
+
+Preferred structure:
+
+- Kotlin
+- Jetpack Compose
+- Material 3
+- Single Activity
+- MVVM architecture
+- ViewModels
+- Repository pattern
+- Kotlin Coroutines and Flow
+- Jetpack Navigation Compose
+- Firebase Authentication
+- Cloud Firestore
+- Firebase App Check, where supported
+- Android DataStore for persistent app preferences
+- Room only where a local database/cache is genuinely needed
+- Android WorkManager for suitable background tasks
+- Android Media3 for compatible media playback
+
+Use modular packages and clean separation between UI, data, models, repositories, and authentication.
+
+Do not create unnecessary modules that conflict with the supported Android build environment.
+
+4. FIREBASE AUTHENTICATION AND DATABASE
+
+Connect the app to a real Firebase project.
+
+Google Login
+
+Implement:
+
+- Sign in with Google
+- New account creation through Google authentication
+- Returning user login
+- Logout
+- Session persistence
+- Authentication state checking
+- Account deletion flow
+- Error handling
+- Loading states
+- Retry functionality
+
+Do not implement a fake Google login screen.
+
+Use Firebase Authentication. Ask for Firebase integration/setup through the supported Google AI Studio workflow when required.
+
+Google Sign-In must be tested on a physical Android device because the browser-based emulator may not provide Google Play services.
+
+Firestore
+
+Use Cloud Firestore for persistent user and platform data.
+
+Create a clear data model for:
+
+- users
+- userProfiles
+- friendRequests
+- friendships
+- follows
+- conversations
+- messages
+- posts
+- reels
+- channels
+- videos
+- channelSubscriptions
+- comments
+- reactions
+- communities
+- communityMembers
+- communityChannels
+- communityMessages
+- communityRoles
+- tournaments
+- tournamentRegistrations
+- tournamentMatches
+- tournamentResults
+- gamingEvents
+- notifications
+- reports
+- blockedUsers
+- creatorAnalytics
+
+Use appropriate document IDs, timestamps, pagination, indexes, and query structures.
+
+Security Rules
+
+Create strict Firestore security rules.
+
+Requirements:
+
+- Users can update only their own permitted profile fields.
+- Users must not be able to make themselves administrators.
+- Private messages must be readable only by authorized conversation participants.
+- Direct messages must require an accepted friendship.
+- Community channels must enforce membership and role permissions.
+- Tournament registrations must be linked to authenticated accounts.
+- Reports must not be editable by the reported user.
+- Administrative privileges must be granted only through a trusted process.
+- Never trust a role supplied by the client.
+- Prevent unauthorized access to private user data.
+
+Generate and explain all required security rules. Do not use open database rules in production.
+
+Media Storage
+
+Create a media repository layer for profile pictures, post images, Reels, and channel videos.
+
+Use an appropriately secured cloud storage provider, such as Firebase Storage, only after its project configuration and permissions are available.
+
+For large video files, provide a proper upload architecture with progress, cancellation, retry, file-size validation, and playback support.
+
+Do not pretend that Firestore itself is a video hosting service.
+
+5. MAIN APP NAVIGATION
+
+Create a premium bottom navigation bar with:
+
+1. Home
+2. Reels
+3. Communities
+4. Tournaments
+5. Profile
+
+Also include convenient access to:
+
+- Search
+- Notifications
+- Messages
+- Create content
+- Creator Studio
+- Settings
+
+Use intuitive icons and clear navigation.
+
+The UI must be polished, consistent, and easy to use on a phone.
+
+6. HOME — GAMING SOCIAL FEED
+
+Build the main Home screen with:
+
+- Following feed
+- Discover feed
+- Gaming posts
+- Creator updates
+- Tournament announcements
+- Community updates
+- Gaming news and announcements
+- Recommended gaming events based on selected interests, using ordinary app logic only
+- Post creation
+- Image posts
+- Text posts
+- Like and comment
+- Share
+- Save/bookmark
+- Report post
+- Follow creator
+- Open creator profile
+
+Feed data must come from actual Firestore records.
+
+Do not invent engagement counts or display fake online statistics.
+
+7. PRIME REELS
+
+The short-video section must be named Reels, not Shorts.
+
+Features:
+
+- Vertical video feed
+- Swipe to next Reel
+- Play and pause
+- Like
+- Comment
+- Share
+- Save
+- Follow creator
+- Open creator profile
+- Upload Reel
+- Caption and hashtags
+- Report Reel
+- Block creator
+- Playback quality selection
+- Autoplay setting
+- Data Saver compatibility
+
+The feed must use real uploaded media and real data.
+
+Use efficient video loading and release media resources when no longer needed.
+
+Do not autoplay videos by default when Data Saver or the user's settings disable it.
+
+Video uploading, transcoding, large-scale delivery, and moderation may require separately configured storage and backend services. Do not fake these operations.
+
+8. PRIME CHANNELS — VIDEO CREATOR PLATFORM
+
+Create a YouTube-style creator channel system called PRIME CHANNELS.
+
+Every eligible user can create a channel linked to their account.
+
+Channel profile
+
+Include:
+
+- Channel name
+- Channel profile picture
+- Channel banner
+- Description
+- Creator username
+- Subscriber count
+- Video count
+- Channel links
+- Subscribe button
+- Share channel
+
+Channel sections
+
+- Home
+- Videos
+- Reels
+- Live
+- Community
+- About
+
+Creator features
+
+- Upload videos
+- Add title and description
+- Add thumbnail
+- Add categories and tags
+- Publish or save as draft
+- Edit video details
+- Delete own content
+- Manage comments
+- Manage subscribers
+- View actual content analytics
+
+Creator Studio
+
+Create a Creator Studio containing:
+
+- Channel overview
+- Views
+- Subscribers
+- Video performance
+- Reel performance
+- Engagement
+- Upload management
+- Comment management
+- Audience activity, if reliable data is available
+
+Only show analytics supported by real stored events and queries. Display "No data yet" when data is unavailable.
+
+9. LIVE STREAMING
+
+Create the PRIME LIVE feature area.
+
+Intended functionality:
+
+- Creator live status
+- Live stream listings
+- Stream title and thumbnail
+- Live viewer count
+- Stream description
+- Creator channel association
+- Live chat
+- Report stream
+- Stream replay listing
+
+For the first implementation, support properly configured external YouTube Live stream links or another authorized playback provider.
+
+Direct streaming from the PRIME ESPORT app requires a real streaming provider or infrastructure for ingest, encoding, playback, and moderation.
+
+Do not create a fake Go Live button that only changes a label.
+
+Do not expose streaming-provider secrets in Android code.
+
+10. PRIME COMMUNITIES — DISCORD-STYLE SERVERS
+
+Create a server and community system.
+
+Users should be able to:
+
+- Create a community
+- Set community name
+- Add description and icon
+- Join communities
+- Leave communities
+- Create invite links when supported
+- View community members
+- Search communities
+- Discover public communities
+- Manage their own community
+
+Community channels
+
+Support:
+
+- Text channels
+- Announcements
+- Rules
+- General chat
+- Gaming chat
+- Media sharing
+- Community events
+
+Roles and permissions
+
+Support roles such as:
+
+- Owner
+- Admin
+- Moderator
+- Member
+
+Implement permission checks for:
+
+- Sending messages
+- Deleting messages
+- Managing channels
+- Managing roles
+- Inviting members
+- Removing members
+- Managing community settings
+
+Only the server-authorized owner or administrator should be able to perform protected actions.
+
+Moderation
+
+Include:
+
+- Kick member
+- Ban member
+- Mute member
+- Delete inappropriate messages
+- Report user
+- Report message
+- Block user
+- Community rules
+
+Text channels must work through the configured backend.
+
+Real-time voice rooms require a separate WebRTC or voice-provider service and signaling infrastructure. Do not pretend voice chat works without it.
+
+11. PRIME FRIENDS AND SOCIAL SYSTEM
+
+Create an Instagram-style friend and follow system.
+
+Users should be able to:
+
+- Send friend request
+- Accept request
+- Reject request
+- Cancel outgoing request
+- Remove friend
+- View friends list
+- Follow a creator
+- Unfollow a creator
+- View followers
+- View following list
+- Search users
+- View public profiles
+
+Keep Friends and Followers separate.
+
+A follow must not automatically grant permission to send private messages.
+
+12. PRIME MESSAGES — FRIEND-REQUEST-GATED CHAT
+
+Create a complete messaging interface.
+
+Important privacy requirement:
+
+A user can start a direct conversation with another user only after the other user has accepted their friend request.
+
+Before acceptance:
+
+- Show the pending friend request state.
+- Do not allow ordinary direct messaging.
+- Do not create an unrestricted private conversation.
+
+After acceptance, support:
+
+- One-to-one chat
+- Text messages
+- Image sharing, when storage is configured
+- Message timestamps
+- Delivered/read states, when reliably supported
+- Typing indicator, when real-time infrastructure supports it
+- Message deletion rules
+- Block user
+- Report conversation
+- Conversation list
+- Search conversations
+- Notification preferences
+
+Also create:
+
+- Friend requests inbox
+- Sent requests
+- Message inbox
+- Unread message indicator
+
+Voice and video calls
+
+Plan voice and video calling for accepted friends only.
+
+Actual calls require a real WebRTC or calling provider, signaling, permissions, and reliable connectivity.
+
+Do not show a functioning call screen or successful call state until the provider is integrated and tested.
+
+13. TOURNAMENTS AND ESPORTS
+
+Create a complete tournament section.
+
+Tournament discovery
+
+Include:
+
+- Upcoming tournaments
+- Ongoing tournaments
+- Completed tournaments
+- Game categories
+- Tournament details
+- Rules
+- Organizer profile
+- Start date and time
+- Registration deadline
+- Team size
+- Maximum team capacity
+- Eligibility requirements
+- Tournament status
+
+Registration
+
+Support:
+
+- Solo registration
+- Team registration
+- Team name
+- Team members
+- Player usernames
+- Registration status
+- Confirmation screen
+- Cancellation where allowed
+
+Tournament management
+
+For authorized organizers:
+
+- Create tournament
+- Edit tournament
+- Manage registrations
+- Create rounds
+- Create brackets
+- Update match schedules
+- Submit results
+- Verify results
+- Publish standings
+
+Results
+
+Include:
+
+- Leaderboard
+- Match history
+- Tournament brackets
+- Winners
+- Tournament Hall of Fame
+
+Never fabricate winners, match results, or team rankings.
+
+Do not include gambling, betting, wagering, or paid random prize mechanics.
+
+14. GAMING HUB
+
+Create a dedicated gaming discovery and community area.
+
+Include:
+
+- Minecraft
+- Free Fire
+- Other popular games
+- Game profiles
+- Favorite games
+- Gaming groups
+- Gaming news
+- Game-related events
+- Game-specific communities
+- Team/clan profiles
+- Clan members
+- Clan announcements
+- Scrim finder
+- Gaming challenges
+- Gaming calendar
+
+Allow users to add games to their profile and select their gaming interests.
+
+15. PRIME MINECRAFT HUB
+
+Create a Minecraft-focused area.
+
+Include:
+
+- Minecraft Java section
+- Minecraft Bedrock section
+- Server directory
+- Server name
+- Edition
+- Version
+- Address and port
+- Description
+- Server owner
+- Favorite server
+- Server community
+- Join instructions
+- Server status when a real status service is available
+
+Minecraft hosting integration
+
+Plan a hosting control panel with:
+
+- Create server
+- Start
+- Stop
+- Restart
+- Console
+- File manager
+- World management
+- Server software selection
+- Player list
+- Server settings
+
+However, actual Minecraft hosting requires real server hardware or a hosting provider, a secure backend, and an authorized hosting API or panel.
+
+Do not claim a server has been created, started, or hosted unless the provider confirms it.
+
+Do not expose hosting API keys inside the APK.
+
+If no hosting provider is configured, build the server directory and clearly explain the missing hosting integration. Do not create fake hosting controls.
+
+16. CREATOR AND COMMUNITY FEATURES
+
+Add these additional platform features:
+
+Creator collaboration
+
+- Creator discovery
+- Collaboration requests
+- Creator profiles
+- Collaboration status
+- Shared content links
+
+Gaming events calendar
+
+- Upcoming events
+- Tournament schedules
+- Community events
+- Creator events
+- Event reminders
+
+Watch Party
+
+Create a watch-party feature design for users watching authorized video content together.
+
+Synchronized playback requires a real-time backend. Do not claim synchronization unless it is working.
+
+Gaming Radio and Podcasts
+
+- Podcast listings
+- Episode details
+- Audio playback
+- Play/pause
+- Playback progress
+- Saved episodes
+- Creator information
+
+Audio files must come from authorized media storage or supported external providers.
+
+Challenges
+
+- Gaming challenges
+- Community challenges
+- Participation
+- Completion status
+- Challenge history
+
+Hall of Fame
+
+- Tournament champions
+- Featured creators
+- Community achievements
+- Featured teams
+
+All achievements and rankings must be backed by real records.
+
+17. NOTIFICATIONS
+
+Create an organized notification center.
+
+Notification types:
+
+- Friend requests
+- Friend request accepted
+- New message
+- New follower
+- Channel subscription
+- New Reel
+- New post
+- Community announcement
+- Tournament registration
+- Tournament schedule
+- Tournament results
+- Event reminder
+- Moderation notice
+
+Include:
+
+- Read/unread status
+- Mark all as read
+- Notification preferences
+- Clear notifications
+
+Use Firebase Cloud Messaging only after its required configuration and trusted notification sender are available. Do not pretend push notifications are active without a working setup.
+
+18. COMPLETE SETTINGS SYSTEM
+
+Build a detailed Settings screen inspired by modern social and gaming applications.
+
+Account
+
+- Profile information
+- Username
+- Email display
+- Profile picture
+- Account management
+- Logout
+- Delete account
+
+Privacy
+
+- Private/public profile
+- Friend request preferences
+- Follow permissions
+- Message permissions
+- Blocked users
+- Muted users
+- Profile visibility
+- Activity visibility
+
+Security
+
+- Sign-in information
+- Active session information where supported
+- Logout
+- Account deletion
+- Security guidance
+
+Notifications
+
+Separate switches for:
+
+- Messages
+- Friend requests
+- Followers
+- Reels
+- Channels
+- Communities
+- Tournaments
+- Events
+- Creator updates
+
+Feed settings
+
+- Preferred feed
+- Autoplay
+- Content preferences
+- Muted topics
+
+Reels settings
+
+- Autoplay Reels
+- Playback quality
+- Preloading
+- Sound preference
+
+Creator settings
+
+- Channel privacy
+- Comment preferences
+- Upload preferences
+- Creator notifications
+
+Live settings
+
+- Live notifications
+- Chat preferences
+- Playback quality
+
+Message settings
+
+- Read receipts
+- Typing indicator
+- Message notifications
+- Media downloads
+
+Community settings
+
+- Community notifications
+- Mention notifications
+- Invite preferences
+- Muted channels
+
+Appearance
+
+- Dark mode
+- Light mode
+- System theme
+- Accent preference
+- App language
+- Text size
+
+Accessibility
+
+- Text scaling
+- Reduced motion
+- Clear labels
+- Screen reader compatibility
+
+Connected accounts
+
+- YouTube account integration, only through an authorized OAuth process
+- Other supported account connections
+
+Support
+
+- Help center
+- Report a bug
+- Send feedback
+- Terms of service
+- Privacy policy
+- App version
+
+Every implemented setting must change actual app behavior and persist after restarting the app.
+
+19. DATA SAVER — IMPORTANT
+
+Create a dedicated Data Saver settings section with real switches.
+
+Include:
+
+- Master Data Saver toggle
+- Autoplay videos
+- Autoplay Reels
+- Video quality: Auto / Low / Medium / High
+- Image quality
+- Preload videos
+- Preload images
+- Download only on Wi-Fi
+- Upload only on Wi-Fi
+- Background data usage
+- Automatic media downloads
+- Audio quality
+- Reduce animations
+- Clear app cache
+- Storage usage information
+
+Requirements:
+
+- Save preferences with Android DataStore.
+- Apply changes to the relevant playback, upload, and loading components.
+- Data Saver must reduce unnecessary network usage.
+- Do not preload media when the user disables preloading.
+- Do not autoplay media against user preferences.
+- Provide visible confirmation when cache is successfully cleared.
+- Do not claim that cache was cleared if the operation failed.
+
+20. SAFETY, PRIVACY, AND MODERATION
+
+Build user safety into the platform.
+
+Include:
+
+- Block user
+- Report user
+- Report post
+- Report Reel
+- Report message
+- Report community
+- Community moderation
+- Content removal workflow
+- Clear community rules
+- Privacy-by-default messaging
+- Protection against unauthorized profile or conversation access
+- Age-appropriate community experience
+- Minimal collection of personal information
+
+Do not expose a user's private email address, phone number, or precise location on public profiles.
+
+Users should be able to control who can contact them and what content appears on their profile.
+
+21. ADMIN AND MODERATOR SYSTEM
+
+Create a protected administration area for authorized platform staff.
+
+Potential tools:
+
+- User management
+- Reports review
+- Community moderation
+- Tournament management
+- Content moderation
+- Platform announcements
+- Feature configuration
+
+Important:
+
+- Do not create a public admin registration option.
+- Do not allow users to grant themselves admin roles.
+- Require trusted server-side authorization for privileged actions.
+- If a secure administrative backend is unavailable, do not expose those controls as working features.
+
+22. UI/UX DESIGN REQUIREMENTS
+
+Create a premium gaming interface.
+
+Design direction:
+
+- Dark black and deep navy background
+- Blue and red accent colors
+- Clean typography
+- Modern cards
+- Subtle gradients
+- Smooth but lightweight transitions
+- Rounded corners
+- Professional icons
+- Clear loading states
+- Useful empty states
+- Consistent spacing
+- High readability
+
+Do not overcrowd screens.
+
+The app should feel like a combination of a gaming social network, creator platform, and esports community.
+
+Create:
+
+- Splash screen
+- Onboarding
+- Authentication screens
+- Main dashboard
+- Reels screen
+- Channel screens
+- Community screens
+- Tournament screens
+- Profile screens
+- Settings screens
+- Loading states
+- Error states
+- Empty states
+
+Use original PRIME ESPORT branding. Do not copy another platform's logo or exact interface.
+
+23. LOW-END ANDROID OPTIMIZATION
+
+The app must run efficiently on devices with limited memory.
+
+Target device example:
+
+- Android 11
+- 3 GB RAM
+- Low-end mobile processor
+- Limited internal storage
+
+Performance requirements:
+
+- Use LazyColumn and LazyRow properly.
+- Load images asynchronously.
+- Prefer compressed thumbnails.
+- Paginate long feeds and message lists.
+- Avoid loading every video at once.
+- Release unused video players.
+- Avoid unnecessary background services.
+- Keep animations lightweight.
+- Avoid excessive recomposition.
+- Use DataStore for app preferences.
+- Show progress during large uploads.
+- Handle poor or unstable internet connections.
+- Preserve useful local UI state where appropriate.
+
+24. ERROR HANDLING
+
+Handle:
+
+- No internet
+- Firebase connection errors
+- Sign-in failures
+- Permission denied
+- Missing media
+- Upload failures
+- Firestore query errors
+- Empty results
+- Session expiration
+- Invalid input
+- Storage quota errors
+- Unsupported provider integrations
+
+Show helpful messages and retry options.
+
+Never silently discard user input or uploaded content.
+
+25. IMPLEMENTATION PHASES
+
+Do not attempt to produce an unverified collection of disconnected screens.
+
+Build the real application progressively while preserving the same project.
+
+Phase 1 — Core Android App
+
+Implement:
+
+- Native Android project
+- Branding and navigation
+- Splash and onboarding
+- Google Sign-In
+- Firebase Authentication
+- Firestore connection
+- User profile
+- Home feed
+- Profile editing
+- Search
+- Friend requests
+- Friend list
+- Privacy settings
+
+Phase 2 — Social Platform
+
+Implement:
+
+- Friend-request-gated direct messaging
+- Posts
+- Comments
+- Likes
+- Follows
+- Reels
+- Notifications
+- Block and report
+- Data Saver settings
+
+Phase 3 — Creator Platform
+
+Implement:
+
+- PRIME CHANNELS
+- Channel creation
+- Subscriptions
+- Video management
+- Creator Studio
+- Creator analytics
+- Community posts
+- Authorized external livestream links
+
+Phase 4 — Communities and Esports
+
+Implement:
+
+- PRIME COMMUNITIES
+- Text channels
+- Roles
+- Permissions
+- Community moderation
+- Tournaments
+- Registrations
+- Brackets
+- Match results
+- Gaming calendar
+- Clans and scrim discovery
+
+Phase 5 — Advanced Integrations
+
+Integrate only when real infrastructure is configured:
+
+- Direct livestreaming
+- Voice chat
+- Video calls
+- Watch Party synchronization
+- Large video delivery and transcoding
+- Push notification sender
+- Minecraft hosting provider
+- Advanced admin backend
+
+Do not represent Phase 5 features as operational before successful integration and testing.
+
+26. BUILD, TEST, AND QUALITY ASSURANCE
+
+After implementing each phase:
+
+1. Check project structure.
+2. Resolve Kotlin compilation errors.
+3. Resolve Gradle dependency conflicts.
+4. Check navigation.
+5. Test screen interactions.
+6. Test authentication.
+7. Test Firestore reads and writes.
+8. Test security rules.
+9. Test permission handling.
+10. Test Android 11 compatibility.
+11. Check memory usage and scrolling performance.
+12. Fix discovered bugs before moving forward.
+
+Do not stop after generating a design preview.
+
+Do not report successful builds or tests that were not actually completed.
+
+27. FINAL DELIVERABLES
+
+Create a complete Android project containing:
+
+- Kotlin source code
+- Jetpack Compose screens
+- Navigation implementation
+- ViewModels
+- Repository classes
+- Firebase authentication integration
+- Firestore integration
+- Firestore security rules
+- Android resources
+- Gradle configuration
+- AndroidManifest.xml
+- DataStore preferences
+- Media handling architecture
+- Error and loading states
+- README.md
+- Firebase setup instructions
+- Build instructions
+- List of external services required for advanced features
+
+The project must remain editable and exportable.
+
+Where supported, produce a buildable APK for physical-device testing. If APK generation is not available in the current environment, provide the complete project ZIP and exact next steps without claiming an APK exists.
+
+28. FINAL INSTRUCTIONS
+
+Start building PRIME ESPORT now.
+
+Do not respond with only a project plan, a feature list, or a design description.
+
+First create the native Android project and implement the foundational screens and working architecture. Then continue through the phases while keeping the project buildable.
+
+Use sensible defaults instead of asking unnecessary questions.
+
+When Firebase setup is required, clearly show the official setup action and explain what permission or configuration is needed.
+
+When an external service is required, state the exact missing integration and do not create a fake substitute.
+
+The final goal is a real, secure, efficient, premium native Android application named PRIME ESPORT — not a website, not a static prototype, and not a fake-feature demo.
