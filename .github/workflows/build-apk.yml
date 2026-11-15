@@ -91,6 +91,24 @@ jobs:
           fi
           echo "Verified ./debug.keystore exists."
 
+      - name: Accept Android SDK licenses
+        shell: bash
+        run: |
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          SDKMANAGER_BIN=""
+          for candidate in \
+            "$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \
+            "$SDK_ROOT/tools/bin/sdkmanager" \
+            "$(command -v sdkmanager 2>/dev/null || true)"; do
+            if [ -n "$candidate" ] && [ -x "$candidate" ]; then
+              SDKMANAGER_BIN="$candidate"
+              break
+            fi
+          done
+          if [ -n "$SDKMANAGER_BIN" ]; then
+            yes | "$SDKMANAGER_BIN" --licenses >/dev/null 2>&1 || true
+          fi
+
       - name: Build debug APK
         shell: bash
         run: gradle :app:assembleDebug --stacktrace --no-daemon
